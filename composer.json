@@ -1,0 +1,27 @@
+{
+    "name": "mfn/cakephp2-postgres-no-meta",
+    "version": "0.0.1",
+    "type": "cakephp-plugin",
+    "description": "A CakePHP2 Postgres database driver without getColumnMeta() support",
+    "keywords": ["CakePHP", "Postgres", "Database"],
+    "extra": {
+        "installer-name": "PostgresNoMeta"
+    },
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Fischer",
+            "email": "markus@fischer.name",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/mfn/cakephp2-postgres-no-meta",
+    "support": {
+        "issues": "https://github.com/mfn/cakephp2-postgres-no-meta/issues"
+    },
+    "minimum-stability": "stable"
+}
