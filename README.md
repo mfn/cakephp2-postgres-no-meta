@@ -10,7 +10,7 @@ data and simply uses `PDO::FETCH_ASSOC`.
 
 # Installation
 
-1. Add the line ``"mfn/cakephp2-postgres-no-meta": "^0.1.0" to your `app/composer.json`
+1. Add the line `"mfn/cakephp2-postgres-no-meta": "^0.0.1"` to your `app/composer.json`
 2. Run `php composer.phar require mfn/cakephp2-postgres-no-meta`
 3. Load the plugin in `app/Config/bootstrap.php` with the line
 ```php
