@@ -56,4 +56,29 @@ class PostgresNoMeta extends \Postgres
 
         return false;
     }
+
+    /**
+     * Decorates the parent method; if the $value is a string, escape it
+     * according to https://www.postgresql.org/docs/9.6/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS-ESCAPE
+     *
+     * {@inheritDoc}
+     */
+    public function value($data, $column = null, $null = true) {
+        $value = parent::value($data, $column, $null);
+
+        if (!is_string($value)) {
+            return $value;
+        }
+        if (!isset($value{0})) {
+            return $value;
+        }
+        # If it starts with a single quote we assume it also ends with one
+        # and thus directly jump to the conclusion we can use our
+        # special postgres escape method
+        if ($value{0} !== "'") {
+            return $value;
+        }
+
+        return 'E' . str_replace('\\', '\\\\', $value);
+    }
 }
