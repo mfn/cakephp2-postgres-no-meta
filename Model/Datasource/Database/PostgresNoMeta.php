@@ -20,7 +20,7 @@ class PostgresNoMeta extends \Postgres
      * @see fetchResult
      * @override
      */
-    public function resultSet(&$results)
+    public function resultSet($results)
     {
         # Deliberately don't do anything in here
     }
