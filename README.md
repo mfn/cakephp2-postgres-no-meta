@@ -17,9 +17,11 @@ underlying PDO/PgSQL driver [4].
 The method `\Postgres::value()` was overriden to apply the special C-style
 escape operation to strings [5].
 
-# Installation
+# Requirements and Installation
 
-1. Add the line `"mfn/cakephp2-postgres-no-meta": "^0.0.2"` to your `app/composer.json`
+1. You need at least CakePHP 2.10.12<br>
+   For CakePHP >= 2.0 and < 2.10.12 , you can use version `0.0.2` of this package
+1. Add the line `"mfn/cakephp2-postgres-no-meta": "^0.0.3"` to your `app/composer.json`
 2. Run `php composer.phar require mfn/cakephp2-postgres-no-meta`
 3. Load the plugin in `app/Config/bootstrap.php` with the line
 ```php
