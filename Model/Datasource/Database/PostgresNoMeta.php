@@ -16,11 +16,11 @@ class PostgresNoMeta extends \Postgres
      *
      * This avoid calling getColumnMeta which is expensive in Postgres
      *
-     * @param array $results
+     * @param PDOStatement $results
      * @see fetchResult
      * @override
      */
-    public function resultSet(&$results)
+    public function resultSet($results)
     {
         # Deliberately don't do anything in here
     }
