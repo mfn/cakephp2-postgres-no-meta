@@ -16,9 +16,7 @@ class PostgresNoMeta extends \Postgres
      *
      * This avoid calling getColumnMeta which is expensive in Postgres
      *
-     * @param PDOStatement $results
-     * @see fetchResult
-     * @override
+     * @inheritdoc
      */
     public function resultSet($results)
     {
@@ -33,8 +31,7 @@ class PostgresNoMeta extends \Postgres
      * - dedicated logic to detect arbitrary booleans
      * - no support for `binary` and `bytea`-types
      *
-     * @return array|bool
-     * @override
+     * @inheritdoc
      */
     public function fetchResult()
     {
@@ -61,7 +58,7 @@ class PostgresNoMeta extends \Postgres
      * Decorates the parent method; if the $value is a string, escape it
      * according to https://www.postgresql.org/docs/9.6/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS-ESCAPE
      *
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function value($data, $column = null, $null = true) {
         $value = parent::value($data, $column, $null);
