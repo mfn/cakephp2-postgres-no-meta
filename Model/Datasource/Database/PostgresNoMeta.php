@@ -78,4 +78,17 @@ class PostgresNoMeta extends \Postgres
 
         return 'E' . str_replace('\\', '\\\\', $value);
     }
+
+    /**
+     * Converts the ID to int if it is_numeric
+     *
+     * @inheritdoc
+     * @return int|string
+     */
+    public function lastInsertId($source = null, $field = 'id')
+    {
+        $id = parent::lastInsertId($source, $field);
+
+        return is_numeric($id) ? (int) $id : $id;
+    }
 }

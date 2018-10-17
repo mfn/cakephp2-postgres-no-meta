@@ -1,6 +1,6 @@
-# CakePHP2 - Postgres driver without getColumnMeta and special escaping support
+# CakePHP2 - Postgres driver with custom adaptions
 
-This driver was changed in two ways:
+This driver was changed in the following ways:
 
 1) The default CakePHP 2.x Postgres driver uses `getColumnMeta` to infer
 column types from the server. Although the PHP part has been optimized
@@ -16,6 +16,10 @@ underlying PDO/PgSQL driver [4].
 
 The method `\Postgres::value()` was overriden to apply the special C-style
 escape operation to strings [5].
+
+3) The default PHP/PDO `lastInsertId` always returns a string. This driver is
+adapted to return an integer if `is_numeric` returns true on it. This allows
+easier integration with codebases using `strict_types=1`.
 
 # Requirements and Installation
 
