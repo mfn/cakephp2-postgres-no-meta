@@ -69,6 +69,12 @@ class PostgresNoMeta extends \Postgres
         if (!isset($value{0})) {
             return $value;
         }
+
+        # This special construct doesn't require further escaping and would break otherwise
+        if ($value === "'CURRENT_TIMESTAMP'") {
+            return $value;
+        }
+
         # If it starts with a single quote we assume it also ends with one
         # and thus directly jump to the conclusion we can use our
         # special postgres escape method
