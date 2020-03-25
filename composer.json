@@ -1,6 +1,6 @@
 {
     "name": "mfn/cakephp2-postgres-no-meta",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "type": "cakephp-plugin",
     "description": "A CakePHP2 Postgres database driver without getColumnMeta() support",
     "keywords": ["CakePHP", "Postgres", "Database"],

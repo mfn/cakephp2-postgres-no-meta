@@ -66,7 +66,7 @@ class PostgresNoMeta extends \Postgres
         if (!is_string($value)) {
             return $value;
         }
-        if (!isset($value{0})) {
+        if (!isset($value[0])) {
             return $value;
         }
 
@@ -78,7 +78,7 @@ class PostgresNoMeta extends \Postgres
         # If it starts with a single quote we assume it also ends with one
         # and thus directly jump to the conclusion we can use our
         # special postgres escape method
-        if ($value{0} !== "'") {
+        if ($value[0] !== "'") {
             return $value;
         }
 
